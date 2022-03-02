@@ -1,0 +1,163 @@
+{
+  "name": "json-utility",
+  "displayName": "JSON Utility",
+  "description": "Convert TS to JSON, Convert JSON to TS, Fix JSON and Beautify JSON",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ganesan Chandran <https://ganesan-chandran.github.io/>"
+  },
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "icon": "images/json-utility-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ganesan-Chandran/vscode-json-utility.git"
+  },
+  "keywords": [
+    "types",
+    "util",
+    "typescript",
+    "json",
+    "format",
+    "interface",
+    "fix",
+    "js",
+    "converter",
+    "json to ts",
+    "ts to json",
+    "json2ts",
+    "ts2json",
+    "json to interface",
+    "interface to json",
+    "json2interface",
+    "interface2json",
+    "json converter",
+    "json sample",
+    "prettify json",
+    "minify json",
+    "beautify json"
+  ],
+  "categories": [
+    "Formatters",
+    "Extension Packs",
+    "Other"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Ganesan-Chandran/vscode-json-utility",
+  "bugs": {
+    "url": "https://github.com/Ganesan-Chandran/vscode-json-utility/issues"
+  },
+  "activationEvents": [
+    "onCommand:json-utility.toJson",
+    "onCommand:json-utility.toTS",
+    "onCommand:json-utility.prettifyJson",
+    "onCommand:json-utility.minifyJson",
+    "onCommand:json-utility.fixJson"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "json-utility.toJson",
+        "title": "JSON Utility: Convert Interface to JSON Sample"
+      },
+      {
+        "command": "json-utility.toTS",
+        "title": "JSON Utility: Convert JSON to Interface"
+      },
+      {
+        "command": "json-utility.prettifyJson",
+        "title": "JSON Utility: Prettify the JSON"
+      },
+      {
+        "command": "json-utility.minifyJson",
+        "title": "JSON Utility: Minify the JSON"
+      },
+      {
+        "command": "json-utility.fixJson",
+        "title": "JSON Utility: Fix the JSON"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "json-utility.toJson",
+        "key": "ctrl+alt+J",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "json-utility.toTS",
+        "key": "ctrl+alt+T",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "json-utility.prettifyJson",
+        "key": "ctrl+alt+P",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "json-utility.minifyJson",
+        "key": "ctrl+alt+M",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "json-utility.fixJson",
+        "key": "ctrl+alt+F",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": [
+      {
+        "type": "object",
+        "title": "JSON Utility",
+        "properties": {
+          "json-utility.output": {
+            "type": "boolean",
+            "default": true,
+            "description": "Open the result in new window."
+          },
+          "json-utility.typeInUnionTypes": {
+            "type": "string",
+            "default": "Random Type",
+            "enum": [
+              "First Type",
+              "Random Type"
+            ],
+            "enumDescriptions": [
+              "Select the first type in the union types for JSON output",
+              "Select the random type in the union types for JSON output"
+            ],
+            "description": "Which type needs to select in the union types for JSON output?"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/jsonic": "^0.3.1",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.64.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "@vscode/test-electron": "^2.0.3",
+    "eslint": "^8.6.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "jsonic": "^1.0.1",
+    "os": "^0.1.2"
+  }
+}
