@@ -1,7 +1,5 @@
 # JSON Utility
 
-![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/json-utility-icon.png?raw=true)
-
 JSON Utility is VSCode extension which is helps to 
  * Convert TypeScript Interface to JSON Sample
  * JSON to TypeScript Interface
@@ -66,7 +64,7 @@ JSON Utility has few configurations. If you want to change the default configura
 |Name | Setting | Default | Description |
 |-----|---------|------------|------------|
 |Output|json-utility.output|New Window|Either open the result in new window or same input file|
-|Type In UnionTypes|json-utility.typeInUnionTypes|Random Type|Which type needs to select in the union types for JSON output? <br /> Example: <br />```interface Test ```<br />```{ ```<br />&nbsp;&nbsp; &nbsp; &nbsp;```name : (string \| number \| boolean)```<br />```}``` <br />Here the `name` property can have `string` or `number` or `boolean` type. In the JSON output, the value of `name` property should be belongs to which type. The type will be picked rondomly from these three types. You can change to First Type(Here `string`) as default for JSON output.|
+|Type In UnionTypes|json-utility.typeInUnionTypes|Random Type|Which type needs to select in the union types for JSON output? <br /> Example: <br />```interface Test ```<br />```{ ```<br />&nbsp;&nbsp; &nbsp; &nbsp;```name : (string \| number \| boolean)```<br />```}``` <br />Here the `name` property can have `string` or `number` or `boolean` type. In the JSON output, the value of `name` property should be belongs to which type. The type will be picked randomly from these three types. You can change to First Type(Here `string`) as default for JSON output.|
 
  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/configuration.png?raw=true)
 
