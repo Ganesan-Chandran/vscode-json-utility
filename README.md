@@ -42,7 +42,7 @@ JSON Utility is VSCode extension which is helps to
   ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/JSON_Fix.gif?raw=true)
 
 ### 4) Beautify the JSON String (Prettify: `Ctrl + Alt + P` ,  Minify: `Ctrl + Alt + M`)
-  1. Prettify the JSON
+  **1. Prettify the JSON**
   * Select the JSON from the file (If you didn't select it then JSON Utility takes the full content in the file as input)
   * Run the extension using any one of the option in below.
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Prettify the JSON`.
@@ -50,7 +50,7 @@ JSON Utility is VSCode extension which is helps to
 
   ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/Prettify_JSON.gif?raw=true)
   
-  2. Minify the JSON
+  **2. Minify the JSON**
   * Select the JSON from the file (If you didn't select it then JSON Utility takes the full content in the file as input)
   * Run the extension using any one of the option in below.
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Minify the JSON`
