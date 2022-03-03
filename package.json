@@ -36,7 +36,8 @@
     "json sample",
     "prettify json",
     "minify json",
-    "beautify json"
+    "beautify json",
+    "json fix"
   ],
   "categories": [
     "Formatters",
