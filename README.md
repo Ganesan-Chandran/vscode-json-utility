@@ -1,6 +1,6 @@
 # JSON Utility
 
-![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/json-utility-icon.png?raw=true)
+![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/json-utility-icon-new.png?raw=true)
 
 JSON Utility is VSCode extension which is helps to 
  * Convert TypeScript Interface to JSON Sample
