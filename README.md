@@ -23,7 +23,7 @@ JSON Utility is VSCode extension which is helps to
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Convert Interface to JSON Sample`
     * Use the shortcut `Ctrl + Alt + J`
 
-  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/TS_to_JSON.gif?raw=true)
+  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/TS_to_JSON_Update.gif?raw=true)
 
 ### 2) Convert JSON to TypeScript Interface (`Ctrl + Alt + T`)
   * Select the JSON from the file (If you didn't select it then JSON Utility takes the full content in the file as input)
@@ -31,7 +31,7 @@ JSON Utility is VSCode extension which is helps to
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Convert JSON to Interface`
     * Use the shortcut `Ctrl + Alt + T`
 
-  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/JSON_to_TS.gif?raw=true)
+  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/JSON_to_TS_Update.gif?raw=true)
 
 ### 3) Fix the JSON Object (`Ctrl + Alt + F`)
   * Select the JSON from the file (If you didn't select it then JSON Utility takes the full content in the file as input)
@@ -39,7 +39,7 @@ JSON Utility is VSCode extension which is helps to
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Fix the JSON`
     * Use the shortcut `Ctrl + Alt + F`
 
-  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/JSON_Fix.gif?raw=true)
+  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/JSON_Fix_Update.gif?raw=true)
 
 ### 4) Beautify the JSON String (Prettify: `Ctrl + Alt + P` ,  Minify: `Ctrl + Alt + M`)
   **1. Prettify the JSON**
@@ -48,7 +48,7 @@ JSON Utility is VSCode extension which is helps to
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Prettify the JSON`.
     * Use the shortcut `Ctrl + Alt + P`
 
-  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/Prettify_JSON.gif?raw=true)
+  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/Prettify_JSON_Update.gif?raw=true)
   
   **2. Minify the JSON**
   * Select the JSON from the file (If you didn't select it then JSON Utility takes the full content in the file as input)
@@ -56,7 +56,7 @@ JSON Utility is VSCode extension which is helps to
     * Use the Command Palette (`Cmd+Shift+P`) -> Type `JSON Utility` -> Select `JSON Utility: Minify the JSON`
     * Use the shortcut `Ctrl + Alt + M`
 
-  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/Minify_JSON.gif?raw=true)
+  ![json-utility Screenshot](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/master/images/Minify_JSON_Update.gif?raw=true)
 
 
 ## ⚙️ Configuration
