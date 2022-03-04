@@ -127,12 +127,14 @@ export function formatJSON(json: any) {
 export function validateInterface(interfaceString: string): string[] {
   let missingInterfaces: string[] = [];
   let chileInterfaceList = interfaceString.trim()
-    .replace(/(([ ]*(export)?[ ]*interface[ ]*[a-zA-Z0-9]*[ ]*\{)|([a-zA-Z0-9-]+(\?)?)[ ]*(:))|(\}|;)/gm, "")
-    .replace(/(\r\n|\n|\r|\(|\)|[[]]|\|)/gm, "")
+    .replace(/(([ ]*(export)?[ ]*interface[ ]*[a-zA-Z0-9]*[ ]*\{)|([a-zA-Z0-9-]+(\?)?)[ ]*(:))|(\}|;)/gm, " ")
+    .replace(/[^0-9a-zA-Z|]/gm, " ")
+    .replace(/(\r\n|\n|\r|\(|\)|[[]]|\|)/gm, " ")
     .replace(/(string|number|boolean|Date|any|unknown|)/gm, "")
     .trim()
     .split(" ")
-    .filter(e => e !== "");
+    .filter(e => e !== "")
+    .filter(onlyUnique);
 
   function checkInterfaceIsAvailable(item: string) {
     let re = new RegExp(`\\binterface[ ]*${item.trim()}\\b`, 'gi');
@@ -202,3 +204,13 @@ export function formatInterfaceName(value: string) {
 export function formatPropertyName(value: string) {
   return value.charAt(0).toLowerCase() + value.slice(1);
 };
+
+export function getPosition(stringval: string, subString: string, index: number) {
+  return stringval.split(subString, index).join(subString).length;
+}
+
+export function countString(str: string, letter: string) {
+  const re = new RegExp(letter, 'gm');
+  const count = str.match(re)?.length ?? 0;
+  return count;
+}

@@ -1,7 +1,7 @@
 import { getJSONUtilityConfiguration } from "./config";
 import {
-  formatJSON, generateNumber, generateNumberFromInterval,
-  generateString, isArray, isObject, isOptionalProperty,
+  countString, formatJSON, generateNumber, generateNumberFromInterval,
+  generateString, getPosition, isArray, isObject, isOptionalProperty,
   randomCheck, removeCommentsFromInterface, Result, ResultType, Types, validateInterface
 } from "./util";
 
@@ -67,65 +67,42 @@ function processInterface(dict: { [name: string]: string }, interfaceName: strin
 
 function buildJSON(jsonStr: string): { [name: string]: string } {
 
-  let bracket: string[] = [];
-  let interfaceName: string = "";
-  let json: string = "";
+  let pos = 2;
+  let prev = 0;
+  let current = 0;
   let dict: { [name: string]: string } = {};
 
-  let str: string[] = jsonStr.trim().replace(/(\r\n|\n|\r)/gm, " ").split(" ").filter(e => (e !== ""));
-
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === " ") {
-      continue;
-    }
-    if (bracket.length === 0) {
-      if (str[i] !== "{" || !str[i].includes("{")) {
-        interfaceName = interfaceName + str[i];
-      }
-      else {
-        bracket.push(str[i]);
-        json = json + str[i];
-      }
+  while (true) {
+    current = getPosition(jsonStr, 'interface', pos);
+    if (prev === current) {
+      break;
     } else {
-      if (str[i] === "{" || str[i].includes("{")) {
-        bracket.push(str[i]);
-        continue;
-      }
-      if (str[i] === ";" || str[i].includes(";")) {
-        if (str[i].includes("}")) {
-          json = json + str[i].replace(";", ",").replace("}", "");
-          str[i] = "}";
-        } else {
-          json = json + str[i].replace(";", ",");
-          continue;
-        }
-      }
-      if (str[i] === ":" || str[i].includes(":")) {
-        json = json + str[i];
-        continue;
-      }
-      if (str[i] === "}" || str[i].includes("}")) {
-        if (bracket.length === 1) {
-          json = json + str[i];
-          bracket.pop();
-          interfaceName = interfaceName.trim()
-            .replace(/([ ]*(export)*[ ]*interface[ ]*)/gm, "")
-            .replace(/(\r\n|\n|\r)/gm, "");
-
-          dict[interfaceName] = json.trim()
-            .replace(/([ ]*)([\[\]\(a-z0-9A-Z\| \)]*|[a-z0-9A-Z])([[]])*(\?)?([ ]*)(:|,)/gm, "\"$2$3$4\"" + "$6")
+      let interfaceString = jsonStr.substring(prev, current);
+      interfaceString = interfaceString.trim().replace(/}[ |\n|\t|\r]*(export)*/gm, "}").replace(/;/gm, ",");
+      let count = countString(interfaceString, "{"); // check any chile object
+      if (count > 1) {
+        let start = 0;
+        let end = 0;
+        for (let i = count; i > 1; i--) {
+          start = getPosition(interfaceString, '{', i);
+          end = getPosition(interfaceString, '}', 1);
+          let interfaceString1 = interfaceString.substring(start, end + 1);
+          let name = generateString(10);
+          let finalinter = interfaceString1;
+          finalinter = finalinter.trim().replace(/([ ]*)([\[\]\(a-z0-9A-Z\| \)]*|[a-z0-9A-Z])([[]])*(\?)?([ ]*)(:|,)/gm, "\"$2$3$4\"" + "$6")
             .replace(/(\"[ ]+)|([ ]+\")/gm, "\"").replace(/,([^,]*)$/, '' + "$1");
-          json = "";
-          interfaceName = "";
-        } else {
-          bracket.pop();
+          dict[name] = finalinter;
+          interfaceString = interfaceString.replace(interfaceString1, name);
         }
-        continue;
       }
-
-      json = json + str[i];
-
+      let nameList = interfaceString.match(/([ ]*(export)?[ ]*interface[ ]*[a-zA-Z0-9]*[ ]*\{)/gm);
+      let name = nameList ? nameList[0].replace("export", "").replace("interface", "").replace("{", "").trim() : "";
+      interfaceString = interfaceString.trim().replace(/([ ]*)([\[\]\(a-z0-9A-Z\| \)]*|[a-z0-9A-Z])([[]])*(\?)?([ ]*)(:|,)/gm, "\"$2$3$4\"" + "$6")
+        .replace(/(\"[ ]+)|([ ]+\")/gm, "\"").replace(/,([^,]*)$/, '' + "$1").replace("export", "").replace("interface", "").replace(name, "").trim();
+      dict[name] = interfaceString;
     }
+    prev = current;
+    pos++;
   }
 
   return dict;

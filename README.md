@@ -81,3 +81,6 @@ See the [license](https://github.com/Ganesan-Chandran/vscode-json-utility/blob/m
 
 ## 👍 Contribution
 Feel free to submit a pull request if you find any bugs (To see a list of active issues, visit the [Issues section](https://github.com/Ganesan-Chandran/vscode-json-utility/issues)). Please make sure all commits are properly documented.
+
+## Icons
+Icons Credit : document icons PNG Designed By IYIKON from [pngtree](https://pngtree.com/freepng/json-file-document-icon_4231641.html?sol=downref&id=bef)

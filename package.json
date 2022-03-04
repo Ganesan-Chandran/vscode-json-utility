@@ -2,7 +2,7 @@
   "name": "json-utility",
   "displayName": "JSON Utility",
   "description": "Convert TS to JSON, Convert JSON to TS, Fix JSON and Beautify JSON",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "GanesanChandran",
   "author": {
     "name": "Ganesan Chandran <https://ganesan-chandran.github.io/>"
